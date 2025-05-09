@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaleht</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            font-family: sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .nupud {
+            display: flex;
+            gap: 30px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nupp {
+            font-size: 4em;
+            padding: 30px 60px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.3s, background 0.4s;
+        }
+
+        .nupp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Hover-värvid igale nupule */
+        .nupp-142a:hover {
+            background-color: #1b488a; /* tumesinine */
+        }
+
+        .nupp-142b:hover {
+            background-color: #b57edc; /* lavendel */
+        }
+
+        .nupp-142c:hover {
+            background-color: #d89dbb; /* roosa */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tere tulemast meie veebilehele!<br>Vali enda klass ❤️</h1>
+    <div class="nupud">
+        <a href="{{ url_for('klass_login', klass='142a') }}" class="nupp nupp-142a">142a</a>
+        <a href="{{ url_for('klass_login', klass='142b') }}" class="nupp nupp-142b">142b</a>
+        <a href="{{ url_for('klass_login', klass='142c') }}" class="nupp nupp-142c">142c</a>
+    </div>
+</body>
+</html>
