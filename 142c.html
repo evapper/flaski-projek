@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>142a</title>
+    <style>
+        body {
+            background: #f6e3f6;
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* Horisontaalne keskendamine */
+            align-items: flex-start; /* Vertikaalne joondamine ülesse */
+            padding-top: 50px; /* Ülemisest äärest jääb ruumi */
+            position: relative; /* Väga oluline, et nupp saaks paremasse serva liikumiseks "position: absolute" kasutada */
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Horisontaalne ja vertikaalne keskendamine */
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .logout {
+            position: absolute; /* Nupp on paigutatud absoluutse positsiooniga */
+            right: 20px; /* Liigutame nupu paremasse serva */
+            top: 50px; /* Paigutame nupu ülemisse ossa */
+            padding: 10px 20px;
+            background-color: white;
+            color: #6a11cb;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        .logout:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>See on klass 142c leht!</h1>
+    </div>
+    <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
+</body>
+</html>
