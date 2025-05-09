@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>142a</title>
+    <style>
+        body {
+            background: #7c9afd;
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Paigutus, et tekst oleks üleval keskel */
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-align: center;
+            position: absolute;
+            top: 50px; /* Tõstab teksti ülevalt veidi alla */
+        }
+
+        /* Väljalogimisnupp horisontaalselt teksti paremas servas */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end; /* Viib nupp paremale serva */
+            position: absolute;
+            top: 50px; /* Samal kõrgusel kui tekst */
+            right: 20px;
+        }
+
+        .logout {
+            padding: 10px 20px;
+            background-color: rgb(0, 0, 0);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        .logout:hover {
+            background-color: #f7b5d0;
+        }
+
+        /* Nuppude paigutus horisontaalselt vasakult paremale */
+        .nuppude-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            width: 100%;
+            max-width: 100%;
+            margin-top: 150px; /* Liigub nuppudele rohkem ruumi */
+        }
+
+        /* Suurem nuppude vertikaalne suurus ja horisontaalne ulatus */
+        .nupp {
+            background-color: #1e2897;
+            color: white;
+            padding: 30px;
+            font-size: 1.5em;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.3s, transform 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .nupp:hover {
+            background-color: #000000;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Väljalogimisnupp -->
+    <div class="header">
+        <a href="{{ url_for('logout') }}" class="logout">Logi välja</a>
+    </div>
+
+    <!-- Tekst -->
+    <h1>See on klass 142a leht!</h1>
+
+    <!-- Nuppude grid -->
+    <div class="nuppude-grid">
+        <a href="{{ url_for('mata') }}" class="nupp">Mata</a>
+        <a href="{{ url_for('eestik') }}" class="nupp">Eestik</a>
+        <a href="{{ url_for('kirjandus') }}" class="nupp">Kirjandus</a>
+
+        <a href="{{ url_for('bio') }}" class="nupp">Bio</a>
+        <a href="{{ url_for('geo') }}" class="nupp">Geo</a>
+        <a href="{{ url_for('musa') }}" class="nupp">Musa</a>
+
+        <a href="{{ url_for('fyysa') }}" class="nupp">Füsa</a>
+        <a href="{{ url_for('keemia') }}" class="nupp">Keemia</a>
+        <a href="{{ url_for('ajalugu') }}" class="nupp">Ajalugu</a>
+    </div>
+
+</body>
+</html>
